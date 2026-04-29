@@ -71,7 +71,8 @@ python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
 # removed --cov flags so a plain `pytest` run doesn't require pytest-cov installed
-addopts = "-v"
+# -x: stop after first failure — speeds up my local dev loop
+addopts = "-v -x"
 
 [tool.coverage.run]
 source = ["src/rlm"]
