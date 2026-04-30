@@ -73,7 +73,8 @@ python_functions = ["test_*"]
 # removed --cov flags so a plain `pytest` run doesn't require pytest-cov installed
 # -x: stop after first failure — speeds up my local dev loop
 # removed -x so I can see all failures at once; easier to triage a batch of broken tests
-addopts = "-v"
+# -p no:warnings: suppress deprecation noise from transformers/torch during test runs
+addopts = "-v -p no:warnings"
 
 [tool.coverage.run]
 source = ["src/rlm"]
